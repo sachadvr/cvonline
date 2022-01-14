@@ -1,17 +1,14 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="zxx">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CV en ligne</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="darkmode.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="media.css" />
     <link rel="stylesheet" href="animations.css" />
     <link
@@ -22,25 +19,26 @@
   <body>
     <main>
       <nav>
-        <section>
+        <div>
           <article>
             <div id="grid">
-              <img src="https://www.sachadvr.fr/images/photo.jpeg" />
-              <span>
-                <h1>Sacha</h1>
-                <h1>Duvivier</h1>
-              </span>
+              <img
+                src="https://www.sachadvr.fr/images/photo.jpeg"
+                alt="profile picture"
+              />
+              <h2>Sacha Duvivier</h2>
             </div>
-            <p>+33 781701638</p>
-            <p>15/11/2001</p>
-            <a href="mailto:sachadvr@icloud.com">sachadvr@icloud.com</a>
-            <p>Lille</p>
-            <p>Pas de permis</p>
+            <p><i class="fa fa-phone-volume"></i>0781701638</p>
+            <p><i class="fa fa-calendar-times"></i>15.11.2001</p>
+            <a href="mailto:sachadvr@icloud.com"
+              ><i class="fa fa-envelope"></i>Mail</a
+            >
+            <p><i class="fa fa-location-arrow"></i>Localisation: Lille</p>
           </article>
 
-          <article><p>Profil Linkedin,Viadeo</p></article>
-        </section>
-        <section>
+          <article><h3>Profil Linkedin,Viadeo</h3></article>
+        </div>
+        <div>
           <article>
             <h3>Accroche</h3>
             <p>Étudiant en L1 SDN</p>
@@ -49,31 +47,41 @@
             <h3>Motivation</h3>
             <p>Étudiant en L1 SDN</p>
           </article>
-        </section>
-        <section>
+        </div>
+        <div>
           <article>
             <h3>Compétences</h3>
-            <label for="range">Range </label>
-            <input type="range" name="" id="" value="80" disabled />
+            <div id="skills">
+              <label for="range">HTML/CSS/JS</label>
+              <input id="range" type="range" value="80" disabled />
+            </div>
+            <div id="skills">
+              <label for="range">ReactJS</label>
+              <input id="range1" type="range" value="50" disabled />
+            </div>
+            <div id="skills">
+              <label for="range">Java</label>
+              <input id="range2" type="range" value="90" disabled />
+            </div>
           </article>
-        </section>
-        <section>
+        </div>
+        <div>
           <article>
             <h3>Centres d'intérêt</h3>
             <ul>
-              <li>Voyages</li>
-              <li>Cuisine</li>
-              <li>Informatique</li>
+              <li><i class="fa fa-plane"></i>Voyages</li>
+              <li><i class="fa fa-cookie-bite"></i>Cuisine</li>
+              <li><i class="fa fa-server"></i>Informatique</li>
             </ul>
           </article>
-        </section>
+        </div>
       </nav>
       <div id="rightcv">
-        <section>
+        <div>
           <article>
             <fieldset>
               <legend>
-                <h2><i class="fas fa-graduation-cap"></i> Formations</h2>
+                <h2><i class="fas fa-graduation-cap"></i>Formations</h2>
               </legend>
               <ul>
                 <li>
@@ -97,13 +105,13 @@
               </ul>
             </fieldset>
           </article>
-        </section>
-        <section>
+        </div>
+        <div>
           <article>
             <fieldset id="delayed">
               <legend>
                 <h2>
-                  <i class="fas fa-briefcase"></i> Expériences profesionelles
+                  <i class="fas fa-briefcase"></i>Expériences profesionelles
                 </h2>
               </legend>
               <ul>
@@ -143,7 +151,7 @@
             earum, soluta ab ipsam dolorem minus, ducimus incidunt vitae
             cupiditate!
           </p>
-        </section>
+        </div>
       </div>
     </main>
 

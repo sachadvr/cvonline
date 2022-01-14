@@ -1,0 +1,9 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sidebar-bg-color: hsl(222, 6%, 31%);
+    --main-bg-color: rgb(114, 129, 145);
+    --main-principal-foreground-color: rgb(255, 255, 255);
+    --main-secondary-foreground-color: rgb(255, 255, 255);
+    --link-foreground-color: hsl(175, 71%, 50%);
+  }
+}
