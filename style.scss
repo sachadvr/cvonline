@@ -124,26 +124,25 @@ header {
 #grid {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 10px;
   padding: 5px;
-  border-radius: 10px;
   // background: rgba(255, 255, 255, 0.774);
-  color: black;
   box-shadow: 3px 3px 3px 0px rgba(2, 2, 2, 0.461);
   margin: auto;
   margin-bottom: 2rem;
   overflow: hidden;
 }
 #grid h2 {
-  flex: 1;
+  flex: 0.6;
   align-self: center;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  font-size: 1.1em;
-  text-align: center;
-  font-family: Helvetica;
-  width: fit-content;
+  font-size: 1.5em;
+  color: white;
+  border-radius: 2px;
+  padding: 15px 0;
 }
 
 i {
