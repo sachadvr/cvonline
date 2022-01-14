@@ -1,0 +1,125 @@
+*,
+*:before,
+*:after {
+  box-sizing: box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  scroll-behavior: smooth;
+  font-weight: 300;
+  font-family: roboto;
+  height: 100vh;
+  overflow: hidden;
+}
+main {
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+nav {
+  flex: 0.3;
+  background: rgb(121, 119, 119);
+  color: white;
+  overflow: hidden;
+  font-size: 1em;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  height: 100vh;
+  padding: 2rem;
+}
+
+#rightcv {
+  overflow-y: scroll;
+  flex: 1;
+
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+
+  & section {
+    flex: 1;
+    flex-basis: 100%;
+  }
+  & fieldset {
+    opacity: 1;
+    animation: fadeinright 2s;
+
+    &#delayed {
+      animation-delay: 0.5s;
+    }
+  }
+}
+ul {
+  margin-left: 1rem;
+}
+h1 {
+  font-weight: 500;
+}
+h2 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: #7cdaff;
+  text-decoration: none;
+}
+
+article {
+  margin-bottom: 2rem;
+}
+
+li {
+  padding: 1.2rem;
+}
+legend {
+  margin-left: 1rem;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  background: black;
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+
+fieldset:hover {
+  background: rgb(225, 224, 224);
+  transition: 1s;
+  cursor: pointer;
+}
+header {
+  transition: 2s;
+  background: black;
+  color: white;
+}
+nav img {
+  max-width: 80px;
+  flex: 1;
+  width: 100%;
+  border-radius: 30%;
+}
+#grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 5px;
+  background: rgba(225, 224, 224, 0.057);
+  margin: auto;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+#grid span {
+  flex: 1;
+  width: 100%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1.3em;
+}

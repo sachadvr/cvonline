@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CV en ligne</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="media.css" />
+    <link rel="stylesheet" href="animations.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
   </head>
   <body>
-    <header>Disapear on scroll</header>
-
     <main>
       <nav>
         <section>
@@ -32,7 +32,7 @@
             <p>Pas de permis</p>
           </article>
 
-          <article>Profil Linkedin,Viadeo</article>
+          <article><p>Profil Linkedin,Viadeo</p></article>
         </section>
         <section>
           <article>
@@ -62,7 +62,7 @@
           </article>
         </section>
       </nav>
-      <div id="rightcv" onscroll="myScript">
+      <div id="rightcv">
         <section>
           <article>
             <fieldset>
@@ -88,25 +88,13 @@
                   voluptates earum rem vero reprehenderit, natus itaque minima
                   labore consectetur sint doloribus inventore autem amet totam?
                 </li>
-                <li>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Numquam architecto illum quibusdam perferendis, veniam
-                  voluptates earum rem vero reprehenderit, natus itaque minima
-                  labore consectetur sint doloribus inventore autem amet totam?
-                </li>
-                <li>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Numquam architecto illum quibusdam perferendis, veniam
-                  voluptates earum rem vero reprehenderit, natus itaque minima
-                  labore consectetur sint doloribus inventore autem amet totam?
-                </li>
               </ul>
             </fieldset>
           </article>
         </section>
         <section>
           <article>
-            <fieldset>
+            <fieldset id="delayed">
               <legend>
                 <h2>
                   <i class="fas fa-briefcase"></i> Expériences profesionelles
@@ -124,18 +112,6 @@
                   Soluta sequi maxime, quam fugit iste unde nemo, adipisci
                   repellat expedita amet perferendis dicta consequuntur nihil!
                   Qui deserunt inventore magnam ut perspiciatis.
-                </li>
-                <li>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Perspiciatis perferendis doloremque dicta fugiat cumque
-                  corrupti, porro optio ipsam dolores alias vel mollitia ex
-                  nihil? Esse est hic ea voluptas expedita.
-                </li>
-                <li>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Perspiciatis perferendis doloremque dicta fugiat cumque
-                  corrupti, porro optio ipsam dolores alias vel mollitia ex
-                  nihil? Esse est hic ea voluptas expedita.
                 </li>
               </ul>
             </fieldset>
@@ -168,16 +144,5 @@
     <footer>
       Copyright &copy; <a href="http://sachadvr.fr">Duvivier Sacha</a>
     </footer>
-    <script>
-      function myScript(e) {
-        console.log(e.scrollTop);
-        if (prevScrollpos > currentScrollPos) {
-          document.querySelector("header").style.opacity = "1";
-        } else {
-          document.querySelector("header").style.opacity = "0";
-        }
-        prevScrollpos = currentScrollPos;
-      }
-    </script>
   </body>
 </html>
