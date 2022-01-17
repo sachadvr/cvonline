@@ -100,9 +100,11 @@ article {
 }
 
 li {
-  margin: 1rem 0;
+  margin: 2rem 0;
+}
 
-  &#voyages {
+nav li {
+  & {
     position: relative;
     cursor: pointer;
 
@@ -121,6 +123,7 @@ li {
       width: 100%;
       max-width: 200px;
       height: 20px;
+      z-index: 1000;
     }
     &:before {
       content: "";
@@ -131,7 +134,7 @@ li {
       position: absolute;
       clip-path: polygon(50% 46%, 0% 100%, 100% 100%);
       left: 20px;
-      top: 0;
+      top: -15px;
       opacity: 0;
     }
     &:hover {
@@ -147,6 +150,17 @@ li {
         opacity: 1;
         top: 50%;
       }
+    }
+
+    &:nth-of-type(2):after {
+      background: url(./map1.png);
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+    &:nth-of-type(3):after {
+      background: url(./map2.png);
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
     }
   }
 }
