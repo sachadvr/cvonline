@@ -14,9 +14,11 @@
   --main-principal-foreground-color: black;
   --main-secondary-foreground-color: white;
   --link-foreground-color: #6505ff;
+  --hovering-color: rgb(225, 224, 224);
 }
 
 body {
+  cursor: url("https://www.sachadvr.fr/images/cursor.png") 16 16, auto;
   color: var(--main-principal-foreground-color);
   scroll-behavior: smooth;
   font-family: "Montserrat", sans-serif;
@@ -34,6 +36,10 @@ main {
 }
 
 nav {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   resize: horizontal;
   -webkit-box-flex: 0.3;
       -ms-flex: 0.3;
@@ -93,9 +99,9 @@ nav img {
       flex-basis: 100%;
 }
 
-#rightcv fieldset {
-  -webkit-animation: fadeinright 2s;
-          animation: fadeinright 2s;
+#rightcv fieldset:hover {
+  -webkit-transform: translateX(2px);
+          transform: translateX(2px);
 }
 
 #rightcv fieldset#delayed {
@@ -138,7 +144,7 @@ footer {
 }
 
 fieldset:hover {
-  background: #e1e0e0;
+  background: var(--hovering-color);
   -webkit-transition: 1s;
   transition: 1s;
   cursor: pointer;
@@ -167,6 +173,35 @@ header {
   margin: auto;
   margin-bottom: 2rem;
   overflow: hidden;
+}
+
+#grid:hover {
+  cursor: pointer;
+  position: relative;
+  overflow: visible;
+}
+
+#grid:hover :after {
+  content: "Zebi";
+  position: absolute;
+  overflow: scroll;
+  width: 100%;
+  height: 100%;
+  background: white;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: fadeinright 0.4s ease-in-out;
+          animation: fadeinright 0.4s ease-in-out;
+  left: 0;
+  top: 0;
 }
 
 #grid h2 {

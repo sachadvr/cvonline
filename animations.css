@@ -8,3 +8,10 @@
     opacity: 1;
   }
 }
+
+@keyframes rotate {
+  0% {
+  }
+  100% {
+  }
+}
