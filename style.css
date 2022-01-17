@@ -34,7 +34,7 @@ main {
   background: var(--main-bg-color);
 }
 
-nav {
+main nav {
   resize: horizontal;
   -webkit-box-flex: 0.3;
       -ms-flex: 0.3;
@@ -54,14 +54,14 @@ nav {
   padding: 2rem;
 }
 
-nav > * {
+main nav > * {
   border-bottom: 1px solid white;
   margin-bottom: 2rem;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
 }
 
-nav img {
+main nav img {
   max-width: 80px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -73,7 +73,7 @@ nav img {
   border-radius: 30%;
 }
 
-#rightcv {
+main #rightcv {
   overflow-y: scroll;
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -86,7 +86,7 @@ nav img {
       flex-wrap: wrap;
 }
 
-#rightcv section {
+main #rightcv section {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -94,21 +94,16 @@ nav img {
       flex-basis: 100%;
 }
 
-#rightcv fieldset {
+main #rightcv fieldset {
   -webkit-transition: -webkit-transform 1s ease-out;
   transition: -webkit-transform 1s ease-out;
   transition: transform 1s ease-out;
   transition: transform 1s ease-out, -webkit-transform 1s ease-out;
 }
 
-#rightcv fieldset:hover {
+main #rightcv fieldset:hover {
   -webkit-transform: translateX(2px);
           transform: translateX(2px);
-}
-
-#rightcv fieldset#delayed {
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
 }
 
 ul {
@@ -154,13 +149,9 @@ footer {
 
 fieldset:hover {
   background: var(--hovering-color);
-  -webkit-transition: 1s;
-  transition: 1s;
 }
 
 header {
-  -webkit-transition: 2s;
-  transition: 2s;
   background: black;
   color: var(--main-secondary-foreground-color);
 }
@@ -188,6 +179,27 @@ header {
   overflow: visible;
 }
 
+#grid:hover :after {
+  visibility: visible;
+  position: absolute;
+  overflow: scroll;
+  width: 100%;
+  height: 100%;
+  background: white;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  left: 0;
+  top: 0;
+}
+
 #grid h2 {
   -webkit-box-flex: 0.6;
       -ms-flex: 0.6;
@@ -212,7 +224,7 @@ i {
   padding-right: 10px;
 }
 
-#skills {
+.skills {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -225,21 +237,21 @@ i {
   margin-bottom: 10px;
 }
 
-#skills:nth-of-type(2) :nth-of-type(1) {
+.skills:nth-of-type(2) :nth-of-type(1) {
   background: #13aba0;
 }
 
-#skills:nth-of-type(3) :nth-of-type(1) {
+.skills:nth-of-type(3) :nth-of-type(1) {
   background: #4fa03e;
 }
 
-#skills > *:not(label) {
+.skills > *:not(label) {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-#skills label {
+.skills label {
   padding: 3px;
   -webkit-box-flex: 0;
       -ms-flex-positive: 0;
@@ -248,5 +260,43 @@ i {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 15px;
+  cursor: pointer;
+  position: relative;
+  overflow: visible;
+  -webkit-transition: background 1s ease-out;
+  transition: background 1s ease-out;
+}
+
+input[type="range"]:hover {
+  background-color: var(--link-foreground-color) !important;
+}
+
+#links {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+#links a {
+  color: white;
+}
+
+#links a:hover {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  color: var(--link-foreground-color);
+}
+
+#links a:hover i {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
 }
 /*# sourceMappingURL=style.css.map */

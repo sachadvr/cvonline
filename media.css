@@ -4,8 +4,8 @@
     height: unset;
   }
   nav img {
-    max-width: 60px;
-    border-radius: 50%;
+    max-width: 60px !important;
+    border-radius: 50% !important;
   }
   nav {
     height: 100vh;
