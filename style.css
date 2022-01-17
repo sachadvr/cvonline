@@ -278,6 +278,10 @@ i {
   background: #4fa03e;
 }
 
+.skills:nth-of-type(1) :nth-of-type(1) {
+  background: #b06af2;
+}
+
 .skills > *:not(label) {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -289,7 +293,6 @@ i {
   -webkit-box-flex: 0;
       -ms-flex-positive: 0;
           flex-grow: 0;
-  background: #b06af2;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
