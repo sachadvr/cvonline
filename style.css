@@ -18,7 +18,6 @@
 }
 
 body {
-  cursor: url("https://www.sachadvr.fr/images/cursor.png") 16 16, auto;
   color: var(--main-principal-foreground-color);
   scroll-behavior: smooth;
   font-family: "Montserrat", sans-serif;
@@ -36,10 +35,6 @@ main {
 }
 
 nav {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   resize: horizontal;
   -webkit-box-flex: 0.3;
       -ms-flex: 0.3;
@@ -99,6 +94,13 @@ nav img {
       flex-basis: 100%;
 }
 
+#rightcv fieldset {
+  -webkit-transition: -webkit-transform 1s ease-out;
+  transition: -webkit-transform 1s ease-out;
+  transition: transform 1s ease-out;
+  transition: transform 1s ease-out, -webkit-transform 1s ease-out;
+}
+
 #rightcv fieldset:hover {
   -webkit-transform: translateX(2px);
           transform: translateX(2px);
@@ -120,6 +122,13 @@ h1 {
 a {
   color: var(--link-foreground-color);
   text-decoration: none;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+a:hover {
+  -webkit-filter: brightness(1.9);
+          filter: brightness(1.9);
 }
 
 article {
@@ -147,7 +156,6 @@ fieldset:hover {
   background: var(--hovering-color);
   -webkit-transition: 1s;
   transition: 1s;
-  cursor: pointer;
 }
 
 header {
@@ -176,32 +184,8 @@ header {
 }
 
 #grid:hover {
-  cursor: pointer;
   position: relative;
   overflow: visible;
-}
-
-#grid:hover :after {
-  content: "Zebi";
-  position: absolute;
-  overflow: scroll;
-  width: 100%;
-  height: 100%;
-  background: white;
-  color: black;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-animation: fadeinright 0.4s ease-in-out;
-          animation: fadeinright 0.4s ease-in-out;
-  left: 0;
-  top: 0;
 }
 
 #grid h2 {
