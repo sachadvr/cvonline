@@ -119,6 +119,7 @@ li {
       left: 0;
       top: 0;
       width: 100%;
+      max-width: 200px;
       height: 20px;
     }
     &:before {
@@ -130,7 +131,7 @@ li {
       position: absolute;
       clip-path: polygon(50% 46%, 0% 100%, 100% 100%);
       left: 20px;
-      top: 50%;
+      top: 0;
       opacity: 0;
     }
     &:hover {
@@ -139,12 +140,12 @@ li {
       &:after {
         opacity: 1;
         top: calc(100% + 9px);
-        width: 100%;
         height: 100px;
       }
 
       &:before {
         opacity: 1;
+        top: 50%;
       }
     }
   }
