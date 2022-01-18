@@ -187,11 +187,6 @@ nav li:hover {
   transition: all 1s ease-out;
 }
 
-nav li:hover :parent-content {
-  -webkit-transition: none !important;
-  transition: none !important;
-}
-
 nav li:hover:after {
   opacity: 1;
   top: calc(100% + 9px);
