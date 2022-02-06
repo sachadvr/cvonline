@@ -1,5 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 *,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Netflix Sans";
+  font-weight: 100;
+  src: url("./NetflixSansMedium.ttf");
+}
+
+*,
 *:before,
 *:after {
   -webkit-box-sizing: border-box;
@@ -23,6 +38,7 @@ body {
   font-family: "Montserrat", sans-serif;
   height: 100vh;
   overflow: hidden;
+  background-color: #141414;
 }
 
 main {
@@ -32,6 +48,19 @@ main {
   display: flex;
   overflow: hidden;
   background: var(--main-bg-color);
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  border-radius: 50px;
+  top: 0;
+  left: 0;
+  -webkit-animation: rotatingandappear 5s ease;
+          animation: rotatingandappear 5s ease;
+  -webkit-animation-delay: 7s;
+          animation-delay: 7s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  z-index: 5;
 }
 
 main nav {
@@ -140,7 +169,7 @@ article {
 }
 
 li {
-  margin: 2rem 0;
+  padding: 1rem 0;
 }
 
 nav li {
@@ -189,7 +218,7 @@ nav li:hover {
 
 nav li:hover:after {
   opacity: 1;
-  top: calc(100% + 9px);
+  top: calc(90%);
   height: 100px;
 }
 
@@ -216,11 +245,20 @@ legend {
 
 footer {
   position: fixed;
+  opacity: 0;
+  visibility: hidden;
   bottom: 0;
   background: rgba(0, 0, 0, 0.845);
   color: var(--main-secondary-foreground-color);
   width: 100%;
   text-align: center;
+  -webkit-animation: appear 5s ease;
+          animation: appear 5s ease;
+  -webkit-animation-delay: 7s;
+          animation-delay: 7s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  z-index: 7;
 }
 
 fieldset:hover {
@@ -356,5 +394,427 @@ input[type="range"]:hover {
   transition: all 0.5s ease;
   -webkit-transform: translateY(-2px);
           transform: translateY(-2px);
+}
+
+#whoiswatching {
+  font-family: "Netflix Sans";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  padding: 5rem;
+  align-items: center;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#whoiswatching p {
+  font-size: 3.5vw;
+  color: white;
+  padding: 0.67em 0;
+}
+
+#whoiswatching img {
+  height: 10vw;
+  width: 10vw;
+  max-height: 200px;
+  max-width: 200px;
+  min-height: 84px;
+  min-width: 84px;
+  border-radius: 4px;
+  border: none;
+}
+
+#whoiswatching img.firstimage {
+  background: url(https://occ-0-56-55.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABTYctxxbe-UkKEdlMxXm4FVGD6DqTHkQ0TQ5CQJ9jbOMnG0CYxYcSICcTUQz8DrB7CpKUGpqJVMtEqksLlvSJx2ac3Ak.png?r=a) no-repeat;
+  background-size: contain;
+}
+
+#whoiswatching img.secondimage {
+  background: url(https://www.sachadvr.fr/images/photo.jpeg) no-repeat;
+  background-size: contain;
+}
+
+#whoiswatching img.thirdimage {
+  background: url(https://occ-0-56-55.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABS7y6M8hmMkDll4f1ikTU80bIXyygZncIeHT9CkoxSbVBcjYtBALq004ZpLiftf7BjKjosJHUC13sa3Ca3t5p5x2gp5P.png?r=fdd) no-repeat;
+  background-size: contain;
+}
+
+#whoiswatching img.fourthimage {
+  background: url(https://occ-0-56-55.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABXYGYCun9Sa2P1_GTaVtADVKfP2uC9e206A3KM1eABgccajzvO4PAR5XMPRiqqrY7SvvY_lneVww04vkQaDMuQ6I-wzm.png?r=c71) no-repeat;
+  background-size: contain;
+}
+
+#whoiswatching img.talent {
+  cursor: pointer;
+}
+
+#whoiswatching img.talent:focus {
+  -webkit-transform: scale(2) rotate(360deg);
+          transform: scale(2) rotate(360deg);
+  -webkit-transition: -webkit-transform 3s ease;
+  transition: -webkit-transform 3s ease;
+  transition: transform 3s ease;
+  transition: transform 3s ease, -webkit-transform 3s ease;
+}
+
+#whoiswatching img:not(.talent) {
+  cursor: not-allowed;
+}
+
+#whoiswatching img:not(.talent):focus {
+  background: url(https://www.sachadvr.fr/images/photo.jpeg) no-repeat;
+  background-size: contain;
+}
+
+#whoiswatching img:not(.talent):focus + a {
+  font-size: 0;
+  position: relative;
+}
+
+#whoiswatching img:not(.talent):focus + a::before {
+  font-size: 18px;
+  content: "Sacha c'est mieux";
+  position: absolute;
+  overflow: visible;
+  width: 100%;
+  z-index: 9999;
+  background: #773f3f;
+  color: white;
+  font-weight: bold;
+  top: 1rem;
+  left: 0;
+}
+
+#whoiswatching img:hover {
+  border: white solid 4px;
+}
+
+#whoiswatching ul {
+  list-style: none;
+  margin-bottom: 6em;
+}
+
+#whoiswatching a {
+  text-decoration: none;
+  color: grey;
+  text-align: center;
+  padding: 0.67em;
+  font-size: 1.4rem;
+}
+
+#whoiswatching ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2vw;
+}
+
+#whoiswatching li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.login {
+  font-family: "Netflix Sans";
+  display: block;
+  -webkit-animation: disapear 1s;
+          animation: disapear 1s;
+  -webkit-animation-delay: 7s;
+          animation-delay: 7s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.login span a.profile-button {
+  font-size: 1.2vw;
+  border: 1px solid grey;
+  color: grey;
+  padding: 0.5em 1.5em;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.video {
+  opacity: 0;
+  position: absolute;
+  visibility: hidden;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-animation: appearthendisapear 10s ease;
+          animation: appearthendisapear 10s ease;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.video video {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.netflixnav {
+  font-family: "Netflix Sans";
+  position: fixed;
+  z-index: 6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(10%, rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 10%, rgba(0, 0, 0, 0));
+  -webkit-animation: appearthendisapear 4s ease;
+          animation: appearthendisapear 4s ease;
+  -webkit-animation-delay: 5.8s;
+          animation-delay: 5.8s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.netflixnav a#title {
+  color: red;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  text-decoration: none;
+  font-size: 30px;
+  margin-left: 3.5rem;
+  font-weight: 900;
+  margin-top: 1rem;
+}
+
+.netflixnav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  visibility: hidden;
+  list-style-type: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  margin-left: 1.6rem;
+  opacity: 0;
+  -webkit-animation: appear 3s ease;
+          animation: appear 3s ease;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+
+.netflixnav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+#moviecontainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 6;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+  overflow: visible;
+  visibility: hidden;
+  color: white;
+  -webkit-animation: appearthendisapear 4s ease;
+          animation: appearthendisapear 4s ease;
+  -webkit-animation-delay: 5.8s;
+          animation-delay: 5.8s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+#moviecontainer p {
+  margin-bottom: 2rem;
+  font-size: 1.5em;
+  margin-left: 2rem;
+}
+
+#moviecontainer #moviegrid {
+  overflow: scroll;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 2rem;
+  margin-left: 2rem;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+}
+
+#moviecontainer #moviegrid::-webkit-scrollbar {
+  display: none;
+}
+
+#moviecontainer #moviegrid img {
+  width: 250px;
+  height: 120px;
+  cursor: pointer;
+  overflow: visible;
+  position: relative;
+}
+
+#moviecontainer #moviegrid img:before {
+  content: "zebi";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+}
+
+#moviecontainer #moviegrid img:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: -webkit-transform 1s ease;
+  transition: -webkit-transform 1s ease;
+  transition: transform 1s ease;
+  transition: transform 1s ease, -webkit-transform 1s ease;
+}
+
+@-webkit-keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@-webkit-keyframes rotatingandappear {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0) rotate(-360deg);
+            transform: scale(0) rotate(-360deg);
+  }
+  to {
+    visibility: visible;
+    -webkit-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes rotatingandappear {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0) rotate(-360deg);
+            transform: scale(0) rotate(-360deg);
+  }
+  to {
+    visibility: visible;
+    -webkit-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes appearthendisapear {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  10% {
+    visibility: visible;
+    opacity: 1;
+  }
+  90% {
+    visibility: visible;
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden I !important;
+    opacity: 0;
+    display: none !important;
+  }
+}
+
+@keyframes appearthendisapear {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  10% {
+    visibility: visible;
+    opacity: 1;
+  }
+  90% {
+    visibility: visible;
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden I !important;
+    opacity: 0;
+    display: none !important;
+  }
+}
+
+@-webkit-keyframes disapear {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+    display: none !important;
+  }
+}
+
+@keyframes disapear {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+    display: none !important;
+  }
 }
 /*# sourceMappingURL=style.css.map */

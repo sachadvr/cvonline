@@ -17,6 +17,60 @@
     />
   </head>
   <body>
+    <div class="netflixnav">
+      <a id="title" href="#">Sacha</a>
+      <ul class="tabbed-primary-navigation">
+        <li class="navigation-tab">
+          <a class="current active" href="/browse">Home</a>
+        </li>
+        <li class="navigation-tab"><a href="/browse/genre/83">TV Shows</a></li>
+        <li class="navigation-tab"><a href="/browse/genre/34399">Movies</a></li>
+        <li class="navigation-tab"><a href="/latest">New &amp; Popular</a></li>
+        <li class="navigation-tab"><a href="/browse/my-list">My List</a></li>
+      </ul>
+    </div>
+    <div class="login">
+      <div id="whoiswatching">
+        <p>Choissisez le meilleur talent</p>
+        <ul>
+          <li><img class="firstimage" tabindex="0" /><a href="#">Theo</a></li>
+          <li>
+            <img class="secondimage talent" tabindex="1" /><a href="#">Sacha</a>
+          </li>
+          <li><img class="thirdimage" tabindex="2" /><a href="#">Alice</a></li>
+          <li>
+            <img class="fourthimage" tabindex="3" /><a href="#">Mélène</a>
+          </li>
+        </ul>
+
+        <span id="profile-button"
+          ><a href="#" class="profile-button">Manage Profiles</a></span
+        >
+      </div>
+    </div>
+    <div class="video">
+      <video>
+        <source src="netflix.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div id="moviecontainer">
+      <p>Sorties de la Semaine</p>
+      <div id="moviegrid">
+        <img src="https://picsum.photos/200" alt="" />
+        <img src="https://picsum.photos/201" alt="" />
+        <img src="https://picsum.photos/202" alt="" />
+        <img src="https://picsum.photos/203" alt="" />
+        <img src="https://picsum.photos/204" alt="" />
+        <img src="https://picsum.photos/205" alt="" />
+        <img src="https://picsum.photos/206" alt="" />
+        <img src="https://picsum.photos/207" alt="" />
+        <img src="https://picsum.photos/208" alt="" />
+        <img src="https://picsum.photos/209" alt="" />
+        <img src="https://picsum.photos/210" alt="" />
+        <img src="https://picsum.photos/211" alt="" />
+      </div>
+    </div>
     <main>
       <nav>
         <div>
@@ -40,8 +94,10 @@
             <a href="https://www.linkedin.com/in/sachadvr/">
               <i class="fab fa-linkedin"></i
             ></a>
-            <a href="http://"> <i class="fab fa-viadeo-square"></i></a>
-            <a href="http://"> <i class="fab fa-github-square"></i></a>
+            <a href="#"> <i class="fab fa-viadeo-square"></i></a>
+            <a href="https://github.com/sachadvr">
+              <i class="fab fa-github-square"></i
+            ></a>
           </div>
         </div>
         <div>
@@ -189,4 +245,9 @@
       Copyright &copy; <a href="http://sachadvr.fr">Duvivier Sacha</a>
     </footer>
   </body>
+  <script>
+    setTimeout(function () {
+      document.querySelector("video").play();
+    }, 3000);
+  </script>
 </html>

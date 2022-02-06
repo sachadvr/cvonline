@@ -2,6 +2,7 @@
   main {
     flex-direction: column;
     height: unset;
+    border-radius: 0;
   }
   nav img {
     max-width: 60px !important;
