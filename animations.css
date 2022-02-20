@@ -8,3 +8,98 @@
     opacity: 1;
   }
 }
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@keyframes rotatingandappear {
+  from {
+    opacity: 0;
+    transform: scale(0) rotate(-360deg);
+  }
+  to {
+    visibility: visible;
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+@keyframes appearthendisapear {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  10% {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  90% {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    position: absolute;
+    transform: scale(0);
+  }
+}
+@keyframes appearandfade {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+  }
+
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes disapear {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    position: absolute;
+    transform: scale(0);
+  }
+}
+
+.login {
+  animation: disapear 1s ease 5s forwards;
+}
+
+.netflixnav {
+  animation: appearandfade 10s ease 0s normal;
+}
+#moviecontainer {
+  animation: appearthendisapear 4s ease 5.8s forwards;
+}
+
+video {
+  animation: appearthendisapear 10s ease 3s forwards;
+}
+main {
+  animation: rotatingandappear 5s ease 7s forwards;
+}
+footer {
+  animation: appear 5s ease 7s forwards;
+}
