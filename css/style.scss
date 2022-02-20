@@ -1,5 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
-
+html {
+  scroll-behavior: smooth;
+}
 *,
 *::before,
 *::after {
@@ -10,7 +11,7 @@
 @font-face {
   font-family: "Netflix Sans";
   font-weight: 100;
-  src: url("./NetflixSansMedium.ttf");
+  src: url("../ressources/NetflixSansMedium.ttf");
 }
 
 :root {
@@ -23,8 +24,7 @@
 }
 body {
   color: var(--main-principal-foreground-color);
-  scroll-behavior: smooth;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Netflix Sans";
   overflow: hidden;
   background-color: #141414;
 }
@@ -69,6 +69,33 @@ main {
         transform: scale(1.1);
       }
     }
+    #grid {
+      &:hover {
+        position: relative;
+        overflow: visible;
+      }
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 5px;
+      box-shadow: 3px 3px 3px 0px rgba(2, 2, 2, 0.461);
+      margin: auto;
+      margin-bottom: 2rem;
+      overflow: hidden;
+
+      h2 {
+        flex: 0.6;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 1.5em;
+        color: white;
+        border-radius: 2px;
+        padding: 15px 0;
+      }
+    }
   }
 
   #rightcv {
@@ -79,14 +106,68 @@ main {
     display: flex;
     flex-wrap: wrap;
 
+    header {
+      width: 100%;
+      height: 150px;
+      background: url(../images/header.jpg);
+      background-size: cover;
+      background-position: center center;
+      background-attachment: scroll;
+      background-repeat: no-repeat;
+    }
+    & #formations,
+    #exp {
+      flex-grow: 1;
+
+      li.listing {
+        width: fit-content;
+        display: grid;
+        grid-template-columns: 30px auto;
+        grid-template-rows: 30px auto;
+        grid-template-areas:
+          "image a"
+          "image b"
+          "c c";
+        p.listing_title {
+          grid-area: a;
+        }
+        p.listing_desc {
+          grid-area: c;
+        }
+        p.listing_name {
+          grid-area: b;
+        }
+        img {
+          padding: 5px;
+          grid-area: image;
+          width: 30px;
+          justify-self: center;
+          align-self: center;
+        }
+      }
+    }
+
     & section {
       flex: 1;
-      flex-basis: 100%;
     }
     & fieldset {
       transition: transform 1s ease-out;
       &:hover {
         transform: translateX(2px);
+      }
+    }
+
+    #contact {
+      width: 90%;
+      max-width: 1200px;
+      border: 1px solid white;
+      border-radius: 30px;
+      margin: auto;
+      padding: 50px;
+
+      input,
+      textarea {
+        width: 100%;
       }
     }
   }
@@ -113,65 +194,63 @@ li {
   padding: 1rem 0;
 }
 
-nav li {
-  & {
-    position: relative;
-    cursor: pointer;
+nav ul#centre_interet li {
+  position: relative;
+  cursor: pointer;
+
+  &:after {
+    content: "";
+    border-radius: 8px;
+    transition: all 1s ease-out;
+    opacity: 0;
+    background: url(../images/map.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 200px;
+    height: 20px;
+    z-index: 1000;
+  }
+  &:before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    transition: all 1s ease-out;
+    background: #535363;
+    position: absolute;
+    clip-path: polygon(50% 46%, 0% 100%, 100% 100%);
+    left: 20px;
+    top: -15px;
+    opacity: 0;
+  }
+  &:hover {
+    transition: all 1s ease-out;
 
     &:after {
-      content: "";
-      border-radius: 8px;
-      transition: all 1s ease-out;
-      opacity: 0;
-      background: url(./map.png);
-      background-size: 100% 100%;
-      background-repeat: no-repeat;
-      position: absolute;
-      margin: auto;
-      left: 0;
-      top: 0;
-      width: 100%;
-      max-width: 200px;
-      height: 20px;
-      z-index: 1000;
+      opacity: 1;
+      top: calc(90%);
+      height: 100px;
     }
+
     &:before {
-      content: "";
-      height: 20px;
-      width: 20px;
-      transition: all 1s ease-out;
-      background: #535363;
-      position: absolute;
-      clip-path: polygon(50% 46%, 0% 100%, 100% 100%);
-      left: 20px;
-      top: -15px;
-      opacity: 0;
+      opacity: 1;
+      top: 50%;
     }
-    &:hover {
-      transition: all 1s ease-out;
+  }
 
-      &:after {
-        opacity: 1;
-        top: calc(90%);
-        height: 100px;
-      }
-
-      &:before {
-        opacity: 1;
-        top: 50%;
-      }
-    }
-
-    &:nth-of-type(2):after {
-      background: url(./map1.png);
-      background-size: 100% 100%;
-      background-repeat: no-repeat;
-    }
-    &:nth-of-type(3):after {
-      background: url(./map2.png);
-      background-size: 100% 100%;
-      background-repeat: no-repeat;
-    }
+  &:nth-of-type(2):after {
+    background: url(../images/map1.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  &:nth-of-type(3):after {
+    background: url(../images/map2.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
   }
 }
 legend {
@@ -192,38 +271,6 @@ footer {
 
 fieldset:hover {
   background: var(--hovering-color);
-}
-header {
-  background: black;
-  color: var(--main-secondary-foreground-color);
-}
-
-#grid {
-  &:hover {
-    position: relative;
-    overflow: visible;
-  }
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 5px;
-  box-shadow: 3px 3px 3px 0px rgba(2, 2, 2, 0.461);
-  margin: auto;
-  margin-bottom: 2rem;
-  overflow: hidden;
-
-  h2 {
-    flex: 0.6;
-    align-self: center;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    font-size: 1.5em;
-    color: white;
-    border-radius: 2px;
-    padding: 15px 0;
-  }
 }
 
 i {
@@ -310,7 +357,7 @@ input[type="range"] {
     color: white;
     padding: 0.67em 0;
   }
-  img {
+  i {
     height: 10vw;
     width: 10vw;
     max-height: 200px;
@@ -320,27 +367,13 @@ input[type="range"] {
     min-width: 84px;
     border-radius: 4px;
     border: none;
+    transition: 100ms;
 
-    &.firstimage {
-      background: url(https://occ-0-56-55.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABTYctxxbe-UkKEdlMxXm4FVGD6DqTHkQ0TQ5CQJ9jbOMnG0CYxYcSICcTUQz8DrB7CpKUGpqJVMtEqksLlvSJx2ac3Ak.png?r=a)
-        no-repeat;
-      background-size: contain;
+    &#firstimage {
+      background: url(../images/theo.png) no-repeat;
     }
-    &.secondimage {
-      background: url(https://www.sachadvr.fr/images/photo.jpeg) no-repeat;
-      background-size: contain;
-    }
-    &.thirdimage {
-      background: url(https://occ-0-56-55.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABS7y6M8hmMkDll4f1ikTU80bIXyygZncIeHT9CkoxSbVBcjYtBALq004ZpLiftf7BjKjosJHUC13sa3Ca3t5p5x2gp5P.png?r=fdd)
-        no-repeat;
-      background-size: contain;
-    }
-    &.fourthimage {
-      background: url(https://occ-0-56-55.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABXYGYCun9Sa2P1_GTaVtADVKfP2uC9e206A3KM1eABgccajzvO4PAR5XMPRiqqrY7SvvY_lneVww04vkQaDMuQ6I-wzm.png?r=c71)
-        no-repeat;
-      background-size: contain;
-    }
-    &.talent {
+    &#secondimage {
+      background: url(../images/sacha.jpg) no-repeat;
       cursor: pointer;
 
       &:focus {
@@ -348,11 +381,23 @@ input[type="range"] {
         transition: transform 3s ease;
       }
     }
-    &:not(.talent) {
+    &#thirdimage {
+      background: url(../images/alice.png) no-repeat;
+    }
+    &#fourthimage {
+      background: url(../images/melene.png) no-repeat;
+    }
+    &#firstimage,
+    &#secondimage,
+    &#thirdimage,
+    &#fourthimage {
+      background-size: contain;
+    }
+    &:not(#secondimage) {
       cursor: not-allowed;
 
       &:focus {
-        background: url(https://www.sachadvr.fr/images/photo.jpeg) no-repeat;
+        background: url(../images/sacha.jpg) no-repeat;
         background-size: contain;
       }
       &:focus + a {
@@ -500,15 +545,15 @@ input[type="range"] {
     margin-left: 2rem;
   }
   #moviegrid {
+    &::-webkit-scrollbar {
+      display: none;
+    }
     overflow: scroll;
     display: grid;
     grid-auto-flow: column;
     gap: 2rem;
     margin-left: 2rem;
-    &::-webkit-scrollbar {
-      display: none;
-    }
-    -ms-overflow-style: none; /* IE and Edge */
+    -ms-overflow-style: none;
     scrollbar-width: none;
 
     img {
@@ -519,18 +564,6 @@ input[type="range"] {
 
       overflow: visible;
       position: relative;
-
-      &:before {
-        content: "zebi";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-
-        background: white;
-        z-index: 9999;
-        top: 0;
-        left: 0;
-      }
 
       &:hover {
         transform: scale(1.2);

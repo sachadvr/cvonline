@@ -1,4 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
 *,
 *::before,
 *::after {
@@ -11,7 +14,7 @@
 @font-face {
   font-family: "Netflix Sans";
   font-weight: 100;
-  src: url("./NetflixSansMedium.ttf");
+  src: url("../ressources/NetflixSansMedium.ttf");
 }
 
 :root {
@@ -25,8 +28,7 @@
 
 body {
   color: var(--main-principal-foreground-color);
-  scroll-behavior: smooth;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Netflix Sans";
   overflow: hidden;
   background-color: #141414;
 }
@@ -92,6 +94,49 @@ main nav img:hover {
           transform: scale(1.1);
 }
 
+main nav #grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 10px;
+  padding: 5px;
+  -webkit-box-shadow: 3px 3px 3px 0px rgba(2, 2, 2, 0.461);
+          box-shadow: 3px 3px 3px 0px rgba(2, 2, 2, 0.461);
+  margin: auto;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+main nav #grid:hover {
+  position: relative;
+  overflow: visible;
+}
+
+main nav #grid h2 {
+  -webkit-box-flex: 0.6;
+      -ms-flex: 0.6;
+          flex: 0.6;
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  font-size: 1.5em;
+  color: white;
+  border-radius: 2px;
+  padding: 15px 0;
+}
+
 main #rightcv {
   overflow-y: scroll;
   -webkit-box-flex: 1;
@@ -106,12 +151,78 @@ main #rightcv {
       flex-wrap: wrap;
 }
 
+main #rightcv header {
+  width: 100%;
+  height: 150px;
+  background: url(../images/header.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+}
+
+main #rightcv #formations,
+main #rightcv #exp {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+main #rightcv #formations li.listing,
+main #rightcv #exp li.listing {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30px auto;
+      grid-template-columns: 30px auto;
+  -ms-grid-rows: 30px auto;
+      grid-template-rows: 30px auto;
+      grid-template-areas: "image a" "image b" "c c";
+}
+
+main #rightcv #formations li.listing p.listing_title,
+main #rightcv #exp li.listing p.listing_title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: a;
+}
+
+main #rightcv #formations li.listing p.listing_desc,
+main #rightcv #exp li.listing p.listing_desc {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: c;
+}
+
+main #rightcv #formations li.listing p.listing_name,
+main #rightcv #exp li.listing p.listing_name {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: b;
+}
+
+main #rightcv #formations li.listing img,
+main #rightcv #exp li.listing img {
+  padding: 5px;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: image;
+  width: 30px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
 main #rightcv section {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
 }
 
 main #rightcv fieldset {
@@ -124,6 +235,20 @@ main #rightcv fieldset {
 main #rightcv fieldset:hover {
   -webkit-transform: translateX(2px);
           transform: translateX(2px);
+}
+
+main #rightcv #contact {
+  width: 90%;
+  max-width: 1200px;
+  border: 1px solid white;
+  border-radius: 30px;
+  margin: auto;
+  padding: 50px;
+}
+
+main #rightcv #contact input,
+main #rightcv #contact textarea {
+  width: 100%;
 }
 
 h1 {
@@ -150,18 +275,18 @@ li {
   padding: 1rem 0;
 }
 
-nav li {
+nav ul#centre_interet li {
   position: relative;
   cursor: pointer;
 }
 
-nav li:after {
+nav ul#centre_interet li:after {
   content: "";
   border-radius: 8px;
   -webkit-transition: all 1s ease-out;
   transition: all 1s ease-out;
   opacity: 0;
-  background: url(./map.png);
+  background: url(../images/map.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   position: absolute;
@@ -174,7 +299,7 @@ nav li:after {
   z-index: 1000;
 }
 
-nav li:before {
+nav ul#centre_interet li:before {
   content: "";
   height: 20px;
   width: 20px;
@@ -189,30 +314,30 @@ nav li:before {
   opacity: 0;
 }
 
-nav li:hover {
+nav ul#centre_interet li:hover {
   -webkit-transition: all 1s ease-out;
   transition: all 1s ease-out;
 }
 
-nav li:hover:after {
+nav ul#centre_interet li:hover:after {
   opacity: 1;
   top: calc(90%);
   height: 100px;
 }
 
-nav li:hover:before {
+nav ul#centre_interet li:hover:before {
   opacity: 1;
   top: 50%;
 }
 
-nav li:nth-of-type(2):after {
-  background: url(./map1.png);
+nav ul#centre_interet li:nth-of-type(2):after {
+  background: url(../images/map1.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 
-nav li:nth-of-type(3):after {
-  background: url(./map2.png);
+nav ul#centre_interet li:nth-of-type(3):after {
+  background: url(../images/map2.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -235,54 +360,6 @@ footer {
 
 fieldset:hover {
   background: var(--hovering-color);
-}
-
-header {
-  background: black;
-  color: var(--main-secondary-foreground-color);
-}
-
-#grid {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  gap: 10px;
-  padding: 5px;
-  -webkit-box-shadow: 3px 3px 3px 0px rgba(2, 2, 2, 0.461);
-          box-shadow: 3px 3px 3px 0px rgba(2, 2, 2, 0.461);
-  margin: auto;
-  margin-bottom: 2rem;
-  overflow: hidden;
-}
-
-#grid:hover {
-  position: relative;
-  overflow: visible;
-}
-
-#grid h2 {
-  -webkit-box-flex: 0.6;
-      -ms-flex: 0.6;
-          flex: 0.6;
-  -ms-flex-item-align: center;
-      align-self: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 10px;
-  font-size: 1.5em;
-  color: white;
-  border-radius: 2px;
-  padding: 15px 0;
 }
 
 i {
@@ -395,7 +472,7 @@ input[type="range"]:hover {
   padding: 0.67em 0;
 }
 
-#whoiswatching img {
+#whoiswatching i {
   height: 10vw;
   width: 10vw;
   max-height: 200px;
@@ -405,33 +482,20 @@ input[type="range"]:hover {
   min-width: 84px;
   border-radius: 4px;
   border: none;
+  -webkit-transition: 100ms;
+  transition: 100ms;
 }
 
-#whoiswatching img.firstimage {
-  background: url(https://occ-0-56-55.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABTYctxxbe-UkKEdlMxXm4FVGD6DqTHkQ0TQ5CQJ9jbOMnG0CYxYcSICcTUQz8DrB7CpKUGpqJVMtEqksLlvSJx2ac3Ak.png?r=a) no-repeat;
-  background-size: contain;
+#whoiswatching i#firstimage {
+  background: url(../images/theo.png) no-repeat;
 }
 
-#whoiswatching img.secondimage {
-  background: url(https://www.sachadvr.fr/images/photo.jpeg) no-repeat;
-  background-size: contain;
-}
-
-#whoiswatching img.thirdimage {
-  background: url(https://occ-0-56-55.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABS7y6M8hmMkDll4f1ikTU80bIXyygZncIeHT9CkoxSbVBcjYtBALq004ZpLiftf7BjKjosJHUC13sa3Ca3t5p5x2gp5P.png?r=fdd) no-repeat;
-  background-size: contain;
-}
-
-#whoiswatching img.fourthimage {
-  background: url(https://occ-0-56-55.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABXYGYCun9Sa2P1_GTaVtADVKfP2uC9e206A3KM1eABgccajzvO4PAR5XMPRiqqrY7SvvY_lneVww04vkQaDMuQ6I-wzm.png?r=c71) no-repeat;
-  background-size: contain;
-}
-
-#whoiswatching img.talent {
+#whoiswatching i#secondimage {
+  background: url(../images/sacha.jpg) no-repeat;
   cursor: pointer;
 }
 
-#whoiswatching img.talent:focus {
+#whoiswatching i#secondimage:focus {
   -webkit-transform: scale(2) rotate(360deg);
           transform: scale(2) rotate(360deg);
   -webkit-transition: -webkit-transform 3s ease;
@@ -440,21 +504,33 @@ input[type="range"]:hover {
   transition: transform 3s ease, -webkit-transform 3s ease;
 }
 
-#whoiswatching img:not(.talent) {
-  cursor: not-allowed;
+#whoiswatching i#thirdimage {
+  background: url(../images/alice.png) no-repeat;
 }
 
-#whoiswatching img:not(.talent):focus {
-  background: url(https://www.sachadvr.fr/images/photo.jpeg) no-repeat;
+#whoiswatching i#fourthimage {
+  background: url(../images/melene.png) no-repeat;
+}
+
+#whoiswatching i#firstimage, #whoiswatching i#secondimage, #whoiswatching i#thirdimage, #whoiswatching i#fourthimage {
   background-size: contain;
 }
 
-#whoiswatching img:not(.talent):focus + a {
+#whoiswatching i:not(#secondimage) {
+  cursor: not-allowed;
+}
+
+#whoiswatching i:not(#secondimage):focus {
+  background: url(../images/sacha.jpg) no-repeat;
+  background-size: contain;
+}
+
+#whoiswatching i:not(#secondimage):focus + a {
   font-size: 0;
   position: relative;
 }
 
-#whoiswatching img:not(.talent):focus + a::before {
+#whoiswatching i:not(#secondimage):focus + a::before {
   font-size: 18px;
   content: "Sacha c'est mieux";
   position: absolute;
@@ -468,7 +544,7 @@ input[type="range"]:hover {
   left: 0;
 }
 
-#whoiswatching img:hover {
+#whoiswatching i:hover {
   border: white solid 4px;
 }
 
@@ -625,7 +701,6 @@ input[type="range"]:hover {
   gap: 2rem;
   margin-left: 2rem;
   -ms-overflow-style: none;
-  /* IE and Edge */
   scrollbar-width: none;
 }
 
@@ -640,17 +715,6 @@ input[type="range"]:hover {
   cursor: pointer;
   overflow: visible;
   position: relative;
-}
-
-#moviecontainer #moviegrid img:before {
-  content: "zebi";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: white;
-  z-index: 9999;
-  top: 0;
-  left: 0;
 }
 
 #moviecontainer #moviegrid img:hover {

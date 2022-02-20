@@ -49,7 +49,6 @@
   }
   100% {
     position: absolute;
-    transform: scale(0);
   }
 }
 @keyframes appearandfade {
@@ -78,8 +77,9 @@
     opacity: 0;
   }
   100% {
-    position: absolute;
     transform: scale(0);
+    position: absolute;
+    top: -1000%;
   }
 }
 

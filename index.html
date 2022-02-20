@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CV en ligne</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="darkmode.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/darkmode.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="media.css" />
-    <link rel="stylesheet" href="animations.css" />
+    <link rel="icon" href="https://www.sachadvr.fr/images/photo.jpeg" />
+    <link rel="stylesheet" href="./css/media.css" />
+    <link rel="stylesheet" href="./css/animations.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -19,27 +20,34 @@
   <body>
     <div class="netflixnav">
       <a id="title" href="#">Sacha</a>
-      <ul class="tabbed-primary-navigation">
-        <li class="navigation-tab">
-          <a class="current active" href="/browse">Home</a>
+      <ul>
+        <li>
+          <a class="current active" href="index.html">Accueil</a>
         </li>
-        <li class="navigation-tab"><a href="/browse/genre/83">TV Shows</a></li>
-        <li class="navigation-tab"><a href="/browse/genre/34399">Movies</a></li>
-        <li class="navigation-tab"><a href="/latest">New &amp; Popular</a></li>
-        <li class="navigation-tab"><a href="/browse/my-list">My List</a></li>
+        <li><a href="#formations">Formations</a></li>
+        <li><a href="#exp">Expériences</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
     <div class="login">
       <div id="whoiswatching">
         <p>Choissisez le meilleur talent</p>
         <ul>
-          <li><img class="firstimage" tabindex="0" /><a href="#">Theo</a></li>
           <li>
-            <img class="secondimage talent" tabindex="1" /><a href="#">Sacha</a>
+            <i id="firstimage" tabindex="0"></i>
+            <a href="#">Theo</a>
           </li>
-          <li><img class="thirdimage" tabindex="2" /><a href="#">Alice</a></li>
           <li>
-            <img class="fourthimage" tabindex="3" /><a href="#">Mélène</a>
+            <i id="secondimage" tabindex="1"></i>
+            <a href="#">Sacha</a>
+          </li>
+          <li>
+            <i id="thirdimage" tabindex="2"></i>
+            <a href="#">Alice</a>
+          </li>
+          <li>
+            <i id="fourthimage" tabindex="3"></i>
+            <a href="#">Mélène</a>
           </li>
         </ul>
 
@@ -50,180 +58,202 @@
     </div>
     <div class="video">
       <video autoplay muted>
-        <source src="./netflix.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
+        <source src="./ressources/netflix.mp4" type="video/mp4" />
+        Votre navigateur ne supporte pas cette vidéo.
       </video>
     </div>
     <div id="moviecontainer">
       <p>Sorties de la Semaine</p>
       <div id="moviegrid">
-        <img src="https://picsum.photos/200" alt="" />
-        <img src="https://picsum.photos/201" alt="" />
-        <img src="https://picsum.photos/202" alt="" />
-        <img src="https://picsum.photos/203" alt="" />
-        <img src="https://picsum.photos/204" alt="" />
-        <img src="https://picsum.photos/205" alt="" />
-        <img src="https://picsum.photos/206" alt="" />
-        <img src="https://picsum.photos/207" alt="" />
-        <img src="https://picsum.photos/208" alt="" />
-        <img src="https://picsum.photos/209" alt="" />
-        <img src="https://picsum.photos/210" alt="" />
-        <img src="https://picsum.photos/211" alt="" />
+        <img src="https://picsum.photos/200" alt="Random pics" />
+        <img src="https://picsum.photos/201" alt="Random pics" />
+        <img src="https://picsum.photos/202" alt="Random pics" />
+        <img src="https://picsum.photos/203" alt="Random pics" />
+        <img src="https://picsum.photos/204" alt="Random pics" />
+        <img src="https://picsum.photos/205" alt="Random pics" />
+        <img src="https://picsum.photos/206" alt="Random pics" />
+        <img src="https://picsum.photos/207" alt="Random pics" />
+        <img src="https://picsum.photos/208" alt="Random pics" />
+        <img src="https://picsum.photos/209" alt="Random pics" />
+        <img src="https://picsum.photos/210" alt="Random pics" />
+        <img src="https://picsum.photos/211" alt="Random pics" />
       </div>
     </div>
     <main>
       <nav>
-        <div>
-          <article>
-            <div id="grid">
-              <img
-                src="https://www.sachadvr.fr/images/photo.jpeg"
-                alt="profile picture"
-              />
-              <h2>Duvivier<br />Sacha</h2>
-            </div>
-            <p><i class="fa fa-phone-volume"></i>0781701638</p>
-            <p><i class="fa fa-calendar-times"></i>15.11.2001</p>
-            <a id="mail" href="mailto:sachadvr@icloud.com"
-              ><i class="fa fa-envelope"></i>Mail</a
-            >
-            <p><i class="fa fa-location-arrow"></i>Localisation: Lille</p>
-          </article>
-
-          <div id="links">
-            <a href="https://www.linkedin.com/in/sachadvr/">
-              <i class="fab fa-linkedin"></i
-            ></a>
-            <a href="#"> <i class="fab fa-viadeo-square"></i></a>
-            <a href="https://github.com/sachadvr">
-              <i class="fab fa-github-square"></i
-            ></a>
+        <article>
+          <div id="grid">
+            <img src="./images/sacha.jpg" alt="profile picture" />
+            <h2>Duvivier<br />Sacha</h2>
           </div>
+          <p><i class="fa fa-phone-volume"></i>0781701638</p>
+          <p><i class="fa fa-calendar-times"></i>15.11.2001</p>
+          <a id="mail" href="mailto:sachadvr@icloud.com"
+            ><i class="fa fa-envelope"></i>Mail</a
+          >
+          <p><i class="fa fa-location-arrow"></i>Localisation: Lille</p>
+        </article>
+
+        <div id="links">
+          <a href="https://www.linkedin.com/in/sachadvr/">
+            <i class="fab fa-linkedin"></i
+          ></a>
+          <a href="#viadeo"> <i class="fab fa-viadeo-square"></i></a>
+          <a href="https://github.com/sachadvr">
+            <i class="fab fa-github-square"></i
+          ></a>
         </div>
-        <div>
-          <article>
-            <h3>Accroche</h3>
-            <p>Étudiant en L1 SDN</p>
-          </article>
-          <article>
-            <h3>Motivation</h3>
-            <p>
-              Étudiant motivé afin de construire un parcours autour du web 3.0
-              et des nouvelles technologies
-            </p>
-          </article>
-        </div>
-        <div>
-          <article>
-            <h3>Compétences</h3>
-            <div class="skills">
-              <label for="range">HTML/CSS/JS</label>
-              <input id="range" title="80%" type="range" value="80" disabled />
-            </div>
-            <div class="skills">
-              <label for="range">ReactJS</label>
-              <input id="range1" title="50%" type="range" value="50" disabled />
-            </div>
-            <div class="skills">
-              <label for="range">Java</label>
-              <input id="range2" title="90%" type="range" value="90" disabled />
-            </div>
-          </article>
-        </div>
-        <div>
-          <article>
-            <h3>Centres d'intérêt</h3>
-            <ul>
-              <li id="voyages"><i class="fa fa-plane"></i>Voyages</li>
-              <li><i class="fa fa-cookie-bite"></i>Cuisine</li>
-              <li><i class="fa fa-server"></i>Informatique</li>
-            </ul>
-          </article>
-        </div>
+        <article>
+          <h3>Accroche</h3>
+          <p>Étudiant en L1 SDN</p>
+        </article>
+        <article>
+          <h3>Motivation</h3>
+          <p>
+            Étudiant motivé afin de construire un parcours autour du web 3.0 et
+            des nouvelles technologies
+          </p>
+        </article>
+        <article>
+          <h3>Compétences</h3>
+          <div class="skills">
+            <label for="range">HTML/CSS/JS</label>
+            <input id="range" title="80%" type="range" value="80" disabled />
+          </div>
+          <div class="skills">
+            <label for="range">ReactJS</label>
+            <input id="range1" title="50%" type="range" value="50" disabled />
+          </div>
+          <div class="skills">
+            <label for="range">Java</label>
+            <input id="range2" title="90%" type="range" value="90" disabled />
+          </div>
+          <h3>Soft Skills</h3>
+          <ul>
+            <li><i class="fas fa-comment"></i>Bonne communication</li>
+            <li><i class="fab fa-teamspeak"></i>Esprit d'équipe</li>
+            <li><i class="far fa-arrow-alt-circle-up"></i>Adaptatif</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Centres d'intérêt</h3>
+          <ul id="centre_interet">
+            <li id="voyages"><i class="fa fa-plane"></i>Voyages</li>
+            <li><i class="fa fa-cookie-bite"></i>Cuisine</li>
+            <li><i class="fa fa-server"></i>Informatique</li>
+          </ul>
+        </article>
       </nav>
       <div id="rightcv">
-        <div>
+        <header></header>
+        <div id="formations">
           <article>
             <fieldset>
               <legend>
                 <h2><i class="fas fa-graduation-cap"></i>Formations</h2>
               </legend>
               <ul>
-                <li>
-                  Licence SDN - 2021-...<br />Université Catholique de Lille
+                <li class="listing">
+                  <img src="./images/catho.webp" alt="catho" />
+                  <p class="listing_title">Licence SDN - 2021-...</p>
+                  <p class="listing_name">Université Catholique de Lille</p>
+                  <p class="listing_desc">Missions: testdgayhdgaydhay</p>
                 </li>
-                <li>
-                  Licence Droit - 2019-2021<br />
-                  Université de Lille 2
+                <li class="listing">
+                  <img src="./images/lille2.png" alt="université de lille" />
+                  <p class="listing_title">Licence Droit - 2019-2021</p>
+                  <p class="listing_name">Université de Lille 2</p>
+                  <p class="listing_desc">Missions: testdgayhdgaydhay</p>
                 </li>
-                <li>Bac ES SPÉ MATHS- 2016-2019<br />Lycée Sainte-Odile</li>
+                <li class="listing">
+                  <img src="./images/sto.png" alt="steodile" />
+                  <p class="listing_title">Bac ES SPÉ MATHS- 2016-2019</p>
+                  <p class="listing_name">Lycée Sainte-Odile</p>
+                  <p class="listing_desc">Missions: testdgayhdgaydhay</p>
+                </li>
               </ul>
             </fieldset>
           </article>
         </div>
-        <div>
+        <div id="exp">
           <article>
-            <fieldset id="delayed">
+            <fieldset>
               <legend>
                 <h2>
                   <i class="fas fa-briefcase"></i>Expériences profesionelles
                 </h2>
               </legend>
               <ul>
-                <li>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Soluta sequi maxime, quam fugit iste unde nemo, adipisci
-                  repellat expedita amet perferendis dicta consequuntur nihil!
-                  Qui deserunt inventore magnam ut perspiciatis.
+                <li class="listing">
+                  <img src="./images/google.jpg" alt="google" />
+                  <p class="listing_title">Ingénieur Logiciel - 2021</p>
+                  <p class="listing_name">Google</p>
+                  <p class="listing_desc">
+                    Missions: Création d'un Webhook concaténé à binance afin de
+                    gérer votre cryptomonaie directement via Google
+                  </p>
                 </li>
-                <li>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Soluta sequi maxime, quam fugit iste unde nemo, adipisci
-                  repellat expedita amet perferendis dicta consequuntur nihil!
-                  Qui deserunt inventore magnam ut perspiciatis.
+                <li class="listing">
+                  <img src="./images/qovery.jpg" alt="qovery" />
+                  <p class="listing_title">Développeur FullStack - 2019/2021</p>
+                  <p class="listing_name">Qovery</p>
+                  <p class="listing_desc">
+                    Missions: Modifications et créations de plusieurs
+                    applications en React Native & Firebase qui ont généré
+                    plusieurs milliers d'euros
+                  </p>
                 </li>
-                <li>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Soluta sequi maxime, quam fugit iste unde nemo, adipisci
-                  repellat expedita amet perferendis dicta consequuntur nihil!
-                  Qui deserunt inventore magnam ut perspiciatis.
-                </li>
-                <li>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Soluta sequi maxime, quam fugit iste unde nemo, adipisci
-                  repellat expedita amet perferendis dicta consequuntur nihil!
-                  Qui deserunt inventore magnam ut perspiciatis.
-                </li>
-                <li>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Soluta sequi maxime, quam fugit iste unde nemo, adipisci
-                  repellat expedita amet perferendis dicta consequuntur nihil!
-                  Qui deserunt inventore magnam ut perspiciatis.
+                <li class="listing">
+                  <img src="./images/freelance.png" alt="freelance" />
+                  <p class="listing_title">Freelance - 2017/2019</p>
+                  <p class="listing_name">Sachadvr</p>
+                  <p class="listing_desc">
+                    Missions: Créations de sites web et d'API afin de connecter
+                    vos services les plus rapidement possible
+                  </p>
                 </li>
               </ul>
             </fieldset>
           </article>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-            earum vero, quaerat laudantium placeat deleniti totam dignissimos
-            corporis obcaecati necessitatibus similique mollitia laboriosam,
-            explicabo nulla? In nulla impedit minima vitae. Voluptates
-            reprehenderit illo reiciendis eveniet culpa quaerat repellendus
-            vitae dolor sequi. Optio quisquam, totam eos quibusdam officiis
-            quidem ducimus. Vero minima temporibus distinctio id nihil deserunt
-            quibusdam, consectetur possimus excepturi! Repellendus aperiam
-            beatae, porro ullam soluta molestiae molestias quaerat ab error
-            facilis in, rerum libero iste quo quod consequatur sunt autem.
-            Dolore maiores voluptatibus soluta modi beatae, provident quia
-            expedita. Earum obcaecati totam commodi consectetur accusantium
-            placeat! Unde error quas expedita molestias voluptatum voluptate
-            reprehenderit, sed dolorum quia numquam, illum eaque odio! Itaque
-            rerum, ea a vitae porro unde at! Omnis, hic ullam. Temporibus velit
-            placeat fugiat error dignissimos quia fuga maxime doloribus
-            recusandae voluptatum doloremque explicabo natus iure numquam,
-            earum, soluta ab ipsam dolorem minus, ducimus incidunt vitae
-            cupiditate!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos vel,
+            autem, eius aliquid sapiente, eveniet quas esse doloribus minus
+            magnam libero ea earum cumque cum. Dicta sint culpa aspernatur
+            voluptatum!Lorem Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Laborum aut laudantium consequatur ex aliquid dolores tenetur
+            totam, soluta nostrum ullam natus cumque deleniti possimus,
+            explicabo laboriosam molestias a voluptate minus!
           </p>
+          <form name="contact" id="contact" action="mail.php" method="post">
+            <p>
+              <label for="nom">Nom</label>
+              <input type="text" id="nom" name="nom" required />
+            </p>
+            <p>
+              <label for="prenom">Prénom</label>
+              <input type="text" id="prenom" name="prenom" required />
+            </p>
+            <p>
+              <label for="email">Mail</label>
+              <input type="email" id="email" name="email" required />
+            </p>
+            <p>
+              <label for="tel">Tel</label>
+              <input type="tel" id="tel" name="tel" required />
+            </p>
+            <p>
+              <label for="message">Commentaire</label>
+              <textarea id="message" name="message" required></textarea>
+            </p>
+            <p>
+              <input
+                id="btnsubmit"
+                type="submit"
+                value="Envoyer"
+                name="Envoyer"
+              />
+            </p>
+          </form>
         </div>
       </div>
     </main>
@@ -232,9 +262,4 @@
       Copyright &copy; <a href="http://sachadvr.fr">Duvivier Sacha</a>
     </footer>
   </body>
-  <script>
-    setTimeout(function () {
-      document.querySelector("video").play();
-    }, 3000);
-  </script>
 </html>
