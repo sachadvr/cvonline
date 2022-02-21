@@ -120,10 +120,11 @@ main {
       flex-grow: 1;
 
       li.listing {
-        width: fit-content;
+        width: 100%;
         display: grid;
         grid-template-columns: 30px auto;
         grid-template-rows: 30px auto;
+        transition: all 0.3s ease;
         grid-template-areas:
           "image a"
           "image b"
@@ -143,6 +144,10 @@ main {
           width: 30px;
           justify-self: center;
           align-self: center;
+        }
+        &:hover {
+          color: black;
+          background: white;
         }
       }
     }

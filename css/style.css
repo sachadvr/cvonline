@@ -170,15 +170,15 @@ main #rightcv #exp {
 
 main #rightcv #formations li.listing,
 main #rightcv #exp li.listing {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 100%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 30px auto;
       grid-template-columns: 30px auto;
   -ms-grid-rows: 30px auto;
       grid-template-rows: 30px auto;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
       grid-template-areas: "image a" "image b" "c c";
 }
 
@@ -217,6 +217,12 @@ main #rightcv #exp li.listing img {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+main #rightcv #formations li.listing:hover,
+main #rightcv #exp li.listing:hover {
+  color: black;
+  background: white;
 }
 
 main #rightcv section {
